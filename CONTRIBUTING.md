@@ -1,7 +1,11 @@
 # Contributing
 
-Fifty people are working in this repository during the same week. The conventions below exist
-so that fifty pull requests can be read and merged without any of them destroying another.
+Fifty people are working in this repository during the same week. The conventions below exist so
+that fifty pull requests can be read without any of them destroying another.
+
+`main` is protected and nothing is merged during the week. Your pull request is reviewed and
+graded while it is open, so do not wait for a merge and do not change your work because somebody
+else's pull request touches the same lines.
 
 ## Branches
 
@@ -36,9 +40,13 @@ npm run build
 npm run lint
 ```
 
-Merge `origin/main` into your branch, or rebase onto it, so your branch is current. Your
-assignment also requires you to merge the `roster-updates` branch, which will conflict with
-your roster change. Resolve the conflict by hand and keep both sides.
+Your assignment requires you to merge the `roster-updates` branch, which will conflict with your
+roster change. Resolve the conflict by hand and keep both sides.
+
+Depending on your git configuration the conflict will show either two sections or three. If you
+see a third section marked `|||||||`, that is the common ancestor, and it is not one of the two
+sides — delete it along with the markers. `npm run build` will tell you if you left any of it
+behind.
 
 ## Pull requests
 

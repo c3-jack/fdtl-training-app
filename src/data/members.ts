@@ -14,5 +14,6 @@ export const members: Member[] = [
   { id: 'm-011', name: 'Omar Haddad', office: 'Arlington', status: 'Active' },
   { id: 'm-012', name: 'Ruth Delacroix', office: 'London', status: 'Alumni' },
 
-  // Add your own row directly below this line. Keep one member per line.
+  // Add your own row directly below this line. Keep one member per line, and use your GitHub
+  // handle in the id (for example 'm-jhomer') so it cannot collide with anybody else's.
 ]
