@@ -1,7 +1,7 @@
 ## Problem
 
-What was wrong or missing, in the terms a user of the board would describe it. If you are
-fixing an issue, link it here.
+What was wrong or missing, in the terms a player or creator of a puzzle would describe it. If
+you are fixing an issue, link it here.
 
 ## Change
 
@@ -16,7 +16,7 @@ sentence.
 
 - [ ] `npm run build` passes
 - [ ] `npm run lint` passes
-- [ ] Loaded the board in a browser and observed the corrected behaviour
+- [ ] Loaded the application in a browser and observed the corrected behaviour
 
 ## Not verified
 

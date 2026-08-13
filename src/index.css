@@ -1,7 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./themes.css";
+
+@theme {
+  --color-bg: #16161e;
+  --color-bg-card: #1a1b26;
+  --color-bg-hover: #292e42;
+  --color-border: #292e42;
+  --color-text: #a9b1d6;
+  --color-text-bright: #c0caf5;
+  --color-accent: #73daca;
+  --color-accent-dim: #7aa2f7;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  overscroll-behavior: none;
+}
+
+/* Connections difficulty colors -- fixed across all themes so the emoji
+   result grid matches the in-game colors everywhere. Sourced from the
+   NYT palette (yellow/green/blue/purple). */
+:root {
+  --diff-0: #f9df6d; /* yellow -- easiest */
+  --diff-1: #a0c35a; /* green */
+  --diff-2: #b0c4ef; /* blue */
+  --diff-3: #ba81c5; /* purple -- hardest */
+  --diff-0-text: #222;
+  --diff-1-text: #222;
+  --diff-2-text: #222;
+  --diff-3-text: #222;
+}
+
+/* Tile animations. Keep these in CSS (not JS) so they feel snappy
+   and don't need a state machine to track. */
+@keyframes tile-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+.tile-shake {
+  animation: tile-shake 0.4s ease-in-out;
+}
+
+@keyframes tile-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.tile-pop {
+  animation: tile-pop 0.25s ease-out;
+}
+
+@keyframes group-reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.group-reveal {
+  animation: group-reveal 0.4s ease-out;
+}
+
+/* Auto-dismissing toast: fade in, hold, fade out, all via CSS so we don't
+   need setState-in-effect to clear it. Remount via `key={counter}` to
+   replay on each event. */
+@keyframes toast-flash {
+  0% { opacity: 0; transform: translate(-50%, -10px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+.toast-flash {
+  animation: toast-flash 1.6s ease forwards;
 }

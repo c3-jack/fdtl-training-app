@@ -33,15 +33,16 @@ worth less than four commits that each say something true.
 
 ## Before you open a pull request
 
-Both commands must pass, and you must have looked at the application in a browser:
+Both commands must pass, and you must have loaded the application and watched the corrected
+behaviour yourself:
 
 ```
 npm run build
 npm run lint
 ```
 
-Your assignment requires you to merge the `roster-updates` branch, which will conflict with your
-roster change. Resolve the conflict by hand and keep both sides.
+Your assignment requires you to merge the `filler-updates` branch, which will conflict with your
+filler group. Resolve the conflict by hand and keep both sides.
 
 Depending on your git configuration the conflict will show either two sections or three. If you
 see a third section marked `|||||||`, that is the common ancestor, and it is not one of the two
@@ -54,12 +55,12 @@ Open one pull request from your branch into `main`. The template in
 `.github/pull_request_template.md` is not optional; fill in every section. A pull request
 that says only what a reader can already see in the diff will be sent back.
 
-State what you verified and how. "Built and linted, then loaded the board and searched for
-`Priya` with a capital P, which now returns her row" is a verification. "Tested" is not.
+State what you verified and how. "Built and linted, then played the puzzle and confirmed a
+2-of-4 guess no longer shows 'One away!'" is a verification. "Tested" is not.
 
-## Roster changes
+## The filler pool
 
-`src/data/members.ts` is the one file everybody edits. Add your row directly below the anchor
-comment at the bottom of the array, on one line, matching the surrounding format. Do not
-reorder, reformat, or sort the existing rows — a diff that touches twelve lines to add one
-will be rejected.
+`src/data/filler-groups.ts` is the one file everybody with `W1-0` edits, at the anchor comment
+below the last yellow entry. Add your own group directly below it, on one line, matching the
+surrounding format. Do not reorder, reformat, or sort the existing groups — a diff that touches
+twelve lines to add one will be rejected.

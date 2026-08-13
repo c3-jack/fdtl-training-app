@@ -1,0 +1,82 @@
+/* Theme system -- CSS custom properties. Matches the sibling projects
+   (wikigame, clocktower) so themes look familiar across the suite.
+   The 4 Connections difficulty colors (yellow/green/blue/purple) are
+   intentionally theme-invariant -- they're part of the puzzle's visual
+   language and need to render identically everywhere. */
+
+html,
+html[data-theme='tokyo'] {
+  --bg: #16161e;
+  --surface: #1a1b26;
+  --text: #a9b1d6;
+  --text-dim: #565f89;
+  --accent: #73daca;
+  --accent-2: #7aa2f7;
+  --accent-3: #bb9af7;
+  --border: #292e42;
+  --color-bg: #16161e;
+  --color-bg-card: #1a1b26;
+  --color-bg-hover: #292e42;
+  --color-border: #292e42;
+  --color-text: #a9b1d6;
+  --color-text-bright: #c0caf5;
+  --color-accent: #73daca;
+  --color-accent-dim: #7aa2f7;
+}
+
+html[data-theme='miami'] {
+  --bg: #0d0221;
+  --surface: #150535;
+  --text: #e0def4;
+  --text-dim: #908caa;
+  --accent: #ff2d95;
+  --accent-2: #00f0ff;
+  --accent-3: #ffe156;
+  --border: #2a1a4e;
+  --color-bg: #0d0221;
+  --color-bg-card: #150535;
+  --color-bg-hover: #2a1a4e;
+  --color-border: #2a1a4e;
+  --color-text: #e0def4;
+  --color-text-bright: #e0def4;
+  --color-accent: #ff2d95;
+  --color-accent-dim: #00f0ff;
+}
+
+html[data-theme='matcha'] {
+  --bg: #1c1a17;
+  --surface: #252320;
+  --text: #d4be98;
+  --text-dim: #7c6f64;
+  --accent: #8db660;
+  --accent-2: #d4be98;
+  --accent-3: #a9b665;
+  --border: #3c3836;
+  --color-bg: #1c1a17;
+  --color-bg-card: #252320;
+  --color-bg-hover: #3c3836;
+  --color-border: #3c3836;
+  --color-text: #d4be98;
+  --color-text-bright: #d4be98;
+  --color-accent: #8db660;
+  --color-accent-dim: #d4be98;
+}
+
+html[data-theme='gruvbox'] {
+  --bg: #282828;
+  --surface: #3c3836;
+  --text: #ebdbb2;
+  --text-dim: #928374;
+  --accent: #fb4934;
+  --accent-2: #fabd2f;
+  --accent-3: #b8bb26;
+  --border: #504945;
+  --color-bg: #282828;
+  --color-bg-card: #3c3836;
+  --color-bg-hover: #504945;
+  --color-border: #504945;
+  --color-text: #ebdbb2;
+  --color-text-bright: #ebdbb2;
+  --color-accent: #fb4934;
+  --color-accent-dim: #fabd2f;
+}
