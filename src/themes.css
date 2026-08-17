@@ -2,9 +2,32 @@
    (wikigame, clocktower) so themes look familiar across the suite.
    The 4 Connections difficulty colors (yellow/green/blue/purple) are
    intentionally theme-invariant -- they're part of the puzzle's visual
-   language and need to render identically everywhere. */
+   language and need to render identically everywhere.
+
+   'c3' is the default theme, sourced from c3.ai's production CSS
+   (near-black surfaces, gray text, blue accents #2266f0/#005b94/#257799)
+   so this app reads as on-brand out of the box. */
 
 html,
+html[data-theme='c3'] {
+  --bg: #1a1a1a;
+  --surface: #232323;
+  --text: #d4d4d4;
+  --text-dim: #979797;
+  --accent: #2266f0;
+  --accent-2: #005b94;
+  --accent-3: #257799;
+  --border: #404040;
+  --color-bg: #1a1a1a;
+  --color-bg-card: #232323;
+  --color-bg-hover: #2d2d2d;
+  --color-border: #404040;
+  --color-text: #d4d4d4;
+  --color-text-bright: #f0f0f0;
+  --color-accent: #2266f0;
+  --color-accent-dim: #005b94;
+}
+
 html[data-theme='tokyo'] {
   --bg: #16161e;
   --surface: #1a1b26;
