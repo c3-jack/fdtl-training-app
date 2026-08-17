@@ -4,7 +4,6 @@
    intentionally theme-invariant -- they're part of the puzzle's visual
    language and need to render identically everywhere. */
 
-html,
 html[data-theme='tokyo'] {
   --bg: #16161e;
   --surface: #1a1b26;
@@ -22,6 +21,29 @@ html[data-theme='tokyo'] {
   --color-text-bright: #c0caf5;
   --color-accent: #73daca;
   --color-accent-dim: #7aa2f7;
+}
+
+/* C3 AI -- brand palette (Denim #1863DC, Cod Gray #1A1A1A, White). Default
+   theme, so it's also aliased to the bare `html` selector for first paint
+   before the theme picker's JS sets data-theme. */
+html,
+html[data-theme='c3ai'] {
+  --bg: #1a1a1a;
+  --surface: #232323;
+  --text: #e5e5e5;
+  --text-dim: #9a9a9a;
+  --accent: #1863dc;
+  --accent-2: #4a90e2;
+  --accent-3: #6ba5ea;
+  --border: #333333;
+  --color-bg: #1a1a1a;
+  --color-bg-card: #232323;
+  --color-bg-hover: #333333;
+  --color-border: #333333;
+  --color-text: #e5e5e5;
+  --color-text-bright: #ffffff;
+  --color-accent: #1863dc;
+  --color-accent-dim: #4a90e2;
 }
 
 html[data-theme='miami'] {

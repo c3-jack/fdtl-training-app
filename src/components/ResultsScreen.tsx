@@ -147,7 +147,7 @@ function isCorrect(guess: number[]): boolean {
 function buildRecap(puzzle: Puzzle, status: 'won' | 'lost', guesses: number[][]): string {
   const rows = guesses.map((g) => g.map((gi) => DIFFICULTY_EMOJI[puzzle.groups[gi].difficulty]).join(''))
   const header = [
-    puzzle.title ? `Connections: ${puzzle.title}` : 'Connections Maker',
+    puzzle.title ? `Connections: ${puzzle.title}` : "Jon's Connections Maker",
     puzzle.author ? `by ${puzzle.author}` : null,
     status === 'won' ? solvedSummary(guesses) : 'Missed it',
   ]

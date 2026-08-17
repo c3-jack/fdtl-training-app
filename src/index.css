@@ -2,14 +2,14 @@
 @import "./themes.css";
 
 @theme {
-  --color-bg: #16161e;
-  --color-bg-card: #1a1b26;
-  --color-bg-hover: #292e42;
-  --color-border: #292e42;
-  --color-text: #a9b1d6;
-  --color-text-bright: #c0caf5;
-  --color-accent: #73daca;
-  --color-accent-dim: #7aa2f7;
+  --color-bg: #1a1a1a;
+  --color-bg-card: #232323;
+  --color-bg-hover: #333333;
+  --color-border: #333333;
+  --color-text: #e5e5e5;
+  --color-text-bright: #ffffff;
+  --color-accent: #1863dc;
+  --color-accent-dim: #4a90e2;
 }
 
 html, body, #root {
