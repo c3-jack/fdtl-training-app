@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const THEMES = [
+  { id: 'light', label: 'Light', color: '#047857' },
   { id: 'tokyo', label: 'Tokyo Night', color: '#73daca' },
   { id: 'miami', label: 'Miami', color: '#ff2d95' },
   { id: 'matcha', label: 'Matcha', color: '#8db660' },
@@ -15,7 +16,7 @@ export function ThemePicker() {
   const [active, setActive] = useState<ThemeId>(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as ThemeId | null
     if (stored && THEMES.some((t) => t.id === stored)) return stored
-    return 'tokyo'
+    return 'light'
   })
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export function ThemePicker() {
           style={{ backgroundColor: theme.color }}
           className={`h-4 w-4 rounded-full transition-transform hover:scale-110 focus:outline-none ${
             active === theme.id
-              ? 'ring-2 ring-white/70 ring-offset-1 ring-offset-[var(--bg)] scale-110'
+              ? 'ring-2 ring-[var(--text)]/70 ring-offset-1 ring-offset-[var(--bg)] scale-110'
               : 'opacity-70 hover:opacity-100'
           }`}
         />
