@@ -21,16 +21,20 @@ export function Tile({
       className={`
         aspect-square flex items-center justify-center
         rounded-lg font-semibold uppercase tracking-wide text-center
-        transition-all duration-100 select-none
+        transition-all duration-150 select-none
         text-[0.7rem] sm:text-sm
         px-1
         ${
           selected
-            ? 'bg-[var(--accent)] text-[#111] scale-95 shadow-inner'
-            : 'bg-[var(--surface)] text-[var(--text)] hover:bg-[var(--color-bg-hover)] border border-[var(--border)]'
+            ? 'bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] text-[#111] scale-95 shadow-inner'
+            : 'bg-[var(--surface)] text-[var(--text)] hover:bg-[var(--color-bg-hover)] hover:-translate-y-0.5 hover:shadow-lg hover:border-[var(--accent)]/40 border border-[var(--border)]'
         }
       `}
-      style={{ minHeight: '56px', animation: shakeKey > 0 ? 'tile-shake 0.4s ease-in-out' : undefined }}
+      style={{
+        minHeight: '56px',
+        animation: shakeKey > 0 ? 'tile-shake 0.4s ease-in-out' : undefined,
+        boxShadow: selected ? '0 6px 18px -6px color-mix(in srgb, var(--accent) 60%, transparent)' : undefined,
+      }}
     >
       <span className="leading-tight break-words">{word}</span>
     </button>

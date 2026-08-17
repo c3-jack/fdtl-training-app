@@ -72,8 +72,8 @@ export function ResultsScreen({
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6 text-center">
-      <div className="text-5xl mb-3">{status === 'won' ? '🎉' : '💀'}</div>
+    <div className="max-w-xl mx-auto p-6 text-center page-in">
+      <div className="text-5xl mb-3 bounce-in">{status === 'won' ? '🎉' : '💀'}</div>
       <h1 className="text-2xl font-bold text-[var(--text)] mb-1">
         {status === 'won' ? 'Solved!' : 'Out of tries'}
       </h1>
@@ -90,10 +90,12 @@ export function ResultsScreen({
         {puzzle.groups.map((g, gi) => (
           <div
             key={gi}
-            className="rounded-lg p-3"
+            className="rounded-lg p-3 group-reveal"
             style={{
               background: `var(--diff-${g.difficulty})`,
               color: `var(--diff-${g.difficulty}-text)`,
+              boxShadow: `0 8px 20px -6px color-mix(in srgb, var(--diff-${g.difficulty}) 65%, transparent)`,
+              animationDelay: `${gi * 0.08}s`,
             }}
           >
             <div className="font-bold uppercase tracking-wide text-sm">{g.title}</div>
@@ -110,7 +112,7 @@ export function ResultsScreen({
         <button
           type="button"
           onClick={handleCopy}
-          className="w-full py-3 rounded-lg bg-[var(--accent)] text-[#111] font-semibold hover:brightness-110"
+          className="glow-cta w-full py-3 rounded-lg bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-[#111] font-semibold hover:brightness-110 hover:scale-[1.01] active:scale-[0.99] transition-all"
         >
           {copied ? 'Copied!' : 'Copy result'}
         </button>
