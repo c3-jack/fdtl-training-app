@@ -65,27 +65,7 @@ export default function App() {
       {mode.kind === 'create' && <CreatePanel onBack={goHome} />}
       {mode.kind === 'play' && <PlayPanel puzzle={mode.puzzle} onBack={goHome} onCreate={goCreate} />}
       {mode.kind === 'invalid' && <InvalidScreen onBack={goHome} onCreate={goCreate} />}
-
-      <SiteFooter />
     </div>
-  )
-}
-
-function SiteFooter() {
-  return (
-    <footer className="mt-16 pb-8 text-center text-xs text-[var(--text-dim)]">
-      Built by{' '}
-      <a href="https://jackhomer.com" className="underline hover:text-[var(--text)]">
-        Jack Homer
-      </a>
-      {' · '}
-      <a
-        href="https://jackhomer.com/projects/connections-maker/"
-        className="underline hover:text-[var(--text)]"
-      >
-        Project write-up
-      </a>
-    </footer>
   )
 }
 

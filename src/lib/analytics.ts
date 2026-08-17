@@ -1,11 +1,7 @@
 /**
- * Umami events. Guarded on every call: the script is deferred and blocked
- * outright for a good share of visitors, and analytics must never be able to
- * break the puzzle.
- *
- * The property is shared with jackhomer.com, so a visit here is attributable
- * to whatever sent it — which is the point, since this app's whole growth loop
- * is people opening links other people made.
+ * Umami events. Guarded on every call: no tracking script is loaded in this
+ * training copy, so `window.umami` is always undefined and every call below
+ * is a no-op. Kept only so the event call sites match the original app.
  */
 type Props = Record<string, string | number | boolean>
 
