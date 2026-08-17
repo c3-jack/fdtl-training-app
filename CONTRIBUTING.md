@@ -1,25 +1,18 @@
 # Contributing
 
-Fifty people are working against this repository during the same week. Nobody but the repo owner
-has push access to it. You work from your own fork.
+Fifty people are working in this repository during the same week. The conventions below exist so
+that fifty pull requests can be read without any of them destroying another.
 
 `main` is protected and nothing is merged during the week. Your pull request is reviewed and
 graded while it is open, so do not wait for a merge and do not change your work because somebody
 else's pull request touches the same lines.
 
-## Fork, then branch
-
-Fork the repository, then clone your fork (this also wires up `upstream` for you):
-
-```
-gh repo fork c3-jack/fdtl-training-app --clone
-cd fdtl-training-app
-```
+## Branches
 
 Work on a branch named for your GitHub handle:
 
 ```
-git checkout -b week1/<your-github-handle>
+week1/<your-github-handle>
 ```
 
 Do not push to `main`, and do not create a second branch for the same work. One person, one
@@ -48,15 +41,8 @@ npm run build
 npm run lint
 ```
 
-Your assignment requires you to merge the `filler-updates` branch, which lives on `upstream`
-(the original repo, not your fork), and will conflict with your filler group:
-
-```
-git fetch upstream
-git merge upstream/filler-updates
-```
-
-Resolve the conflict by hand and keep both sides.
+Your assignment requires you to merge the `filler-updates` branch, which will conflict with your
+filler group. Resolve the conflict by hand and keep both sides.
 
 Depending on your git configuration the conflict will show either two sections or three. If you
 see a third section marked `|||||||`, that is the common ancestor, and it is not one of the two
@@ -65,7 +51,7 @@ behind.
 
 ## Pull requests
 
-Open one pull request from your fork's branch into `main` on the upstream repo. The template in
+Open one pull request from your branch into `main`. The template in
 `.github/pull_request_template.md` is not optional; fill in every section. A pull request
 that says only what a reader can already see in the diff will be sent back.
 
