@@ -5,6 +5,25 @@
    language and need to render identically everywhere. */
 
 html,
+html[data-theme='pastel'] {
+  --bg: #fdf1f5;
+  --surface: #ffffff;
+  --text: #4a3b52;
+  --text-dim: #8a7a95;
+  --accent: #ffadc7;
+  --accent-2: #b5e8ff;
+  --accent-3: #c9b8ff;
+  --border: #f0d9e4;
+  --color-bg: #fdf1f5;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #ffeaf0;
+  --color-border: #f0d9e4;
+  --color-text: #4a3b52;
+  --color-text-bright: #2e2438;
+  --color-accent: #ffadc7;
+  --color-accent-dim: #b5e8ff;
+}
+
 html[data-theme='tokyo'] {
   --bg: #16161e;
   --surface: #1a1b26;
