@@ -1,7 +1,8 @@
 ## Problem
 
-What was wrong or missing, in the terms a player or creator of a puzzle would describe it. If
-you are fixing an issue, link it here.
+One combined write-up covering all four tickets (W1-0 through W1-3), not four separate
+sections. What was wrong or missing in each, in the terms a player or creator of a puzzle
+would describe it. Link the issues here.
 
 ## Change
 
