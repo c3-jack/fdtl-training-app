@@ -24,7 +24,7 @@ export function ThemePicker() {
   }, [active])
 
   return (
-    <div className="flex items-center gap-1.5" aria-label="Theme picker">
+    <div className="flex items-center gap-2 bg-[var(--surface)]/70 backdrop-blur-sm border border-[var(--border)] rounded-full px-2 py-1.5" aria-label="Theme picker">
       {THEMES.map((theme) => (
         <button
           key={theme.id}
@@ -32,10 +32,13 @@ export function ThemePicker() {
           title={theme.label}
           aria-label={`Switch to ${theme.label} theme`}
           onClick={() => setActive(theme.id)}
-          style={{ backgroundColor: theme.color }}
-          className={`h-4 w-4 rounded-full transition-transform hover:scale-110 focus:outline-none ${
+          style={{
+            backgroundColor: theme.color,
+            boxShadow: active === theme.id ? `0 0 8px 1px color-mix(in srgb, ${theme.color} 80%, transparent)` : undefined,
+          }}
+          className={`h-4 w-4 rounded-full transition-all hover:scale-125 focus:outline-none ${
             active === theme.id
-              ? 'ring-2 ring-white/70 ring-offset-1 ring-offset-[var(--bg)] scale-110'
+              ? 'ring-2 ring-white/70 ring-offset-1 ring-offset-[var(--bg)] scale-125'
               : 'opacity-70 hover:opacity-100'
           }`}
         />

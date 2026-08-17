@@ -17,6 +17,7 @@ export function SolvedGroupBanner({ group }: { group: Group }) {
       style={{
         background: `var(--diff-${group.difficulty})`,
         color: textColors[group.difficulty] ?? '',
+        boxShadow: `0 8px 20px -6px color-mix(in srgb, var(--diff-${group.difficulty}) 65%, transparent)`,
       }}
     >
       <div className="font-bold uppercase tracking-wide text-sm">{group.title}</div>

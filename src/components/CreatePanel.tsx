@@ -229,7 +229,7 @@ export function CreatePanel({ onBack, initialPuzzle }: { onBack: () => void; ini
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-4 pb-24">
+    <div className="max-w-3xl mx-auto p-4 pb-24 page-in">
       <div className="flex items-center justify-between mb-6">
         <button
           onClick={onBack}
@@ -329,7 +329,7 @@ export function CreatePanel({ onBack, initialPuzzle }: { onBack: () => void; ini
         type="button"
         onClick={handleGenerate}
         disabled={!validation.ok}
-        className="mt-6 w-full py-3 rounded-lg bg-[var(--accent)] text-[#111] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:brightness-110 transition-all"
+        className={`mt-6 w-full py-3 rounded-lg bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-[#111] font-semibold disabled:opacity-40 disabled:cursor-not-allowed disabled:bg-none disabled:bg-[var(--border)] hover:brightness-110 hover:scale-[1.005] active:scale-[0.995] transition-all ${validation.ok ? 'glow-cta' : ''}`}
       >
         Generate share link
       </button>
@@ -379,7 +379,10 @@ function GroupEditor({
     ? `Random ${DIFFICULTY_LABELS[group.difficulty].toLowerCase()} filler`
     : 'Random filler'
   return (
-    <div className="bg-[var(--surface)] rounded-lg border border-[var(--border)] overflow-hidden">
+    <div
+      className="bg-[var(--surface)] rounded-lg border border-[var(--border)] overflow-hidden transition-all hover:shadow-lg hover:-translate-y-0.5"
+      style={group.difficulty !== null ? { boxShadow: `0 4px 16px -8px color-mix(in srgb, ${bandColor} 50%, transparent)` } : undefined}
+    >
       <div className="h-1.5" style={{ background: bandColor }} />
       <div className="p-4 space-y-3">
         <div className="flex gap-2 items-center">
@@ -614,8 +617,8 @@ function ShareScreen({ puzzle, onEdit, onBack }: { puzzle: Puzzle; onEdit: () =>
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6 text-center">
-      <div className="text-6xl mb-4">🎉</div>
+    <div className="max-w-xl mx-auto p-6 text-center page-in">
+      <div className="text-6xl mb-4 bounce-in">🎉</div>
       <h1 className="text-2xl font-bold text-[var(--text)] mb-2">Puzzle ready</h1>
       <p className="text-[var(--text-dim)] mb-6">
         Share this link. Anyone who opens it plays your puzzle -- no account, no app install.
@@ -633,7 +636,7 @@ function ShareScreen({ puzzle, onEdit, onBack }: { puzzle: Puzzle; onEdit: () =>
           type="button"
           onClick={handleCopy}
           disabled={shortening}
-          className="w-full py-3 rounded-lg bg-[var(--accent)] text-[#111] font-semibold hover:brightness-110 transition-all disabled:opacity-60"
+          className="glow-cta w-full py-3 rounded-lg bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-[#111] font-semibold hover:brightness-110 hover:scale-[1.005] active:scale-[0.995] transition-all disabled:opacity-60"
         >
           {shortening
             ? 'Shortening…'

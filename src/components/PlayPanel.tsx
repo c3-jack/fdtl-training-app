@@ -67,7 +67,7 @@ export function PlayPanel({ puzzle, onBack, onCreate }: { puzzle: Puzzle; onBack
   }
 
   return (
-    <div className="max-w-xl mx-auto p-4 pt-16">
+    <div className="max-w-xl mx-auto p-4 pt-16 page-in">
       <div className="flex items-center justify-between mb-2 gap-2">
         <button
           type="button"
@@ -139,7 +139,7 @@ export function PlayPanel({ puzzle, onBack, onCreate }: { puzzle: Puzzle; onBack
             <div
               key={i}
               className={`h-3 w-3 rounded-full transition-all ${
-                i < state.mistakesLeft ? 'bg-[var(--text)]' : 'bg-[var(--border)]'
+                i < state.mistakesLeft ? 'bg-[var(--accent)] shadow-[0_0_6px_1px_var(--accent)]' : 'bg-[var(--border)] scale-90'
               }`}
             />
           ))}
