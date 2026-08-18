@@ -71,7 +71,7 @@ export default function App() {
 
 function HomeScreen({ onCreate, onExample }: { onCreate: () => void; onExample: () => void }) {
   return (
-    <div className="max-w-xl mx-auto p-8 pt-16 text-center">
+    <div className="max-w-xl mx-auto p-8 pt-16 text-center underline">
       <div className="flex items-center justify-center gap-2 mb-4">
         <div className="h-6 w-6 rounded" style={{ background: 'var(--diff-0)' }} />
         <div className="h-6 w-6 rounded" style={{ background: 'var(--diff-1)' }} />
