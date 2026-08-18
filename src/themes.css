@@ -103,7 +103,7 @@ html[data-theme='gruvbox'] {
   --color-accent-dim: #fabd2f;
 }
 
-html[data-theme='c3'] {
+html[data-theme='c3-blue'] {
   --bg: #0a1628;
   --surface: #101f38;
   --text: #c3ccdb;
