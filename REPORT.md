@@ -1,31 +1,24 @@
 # Assignment 1 report
 
-1. Two of the four issues were about the app being too trigger-happy: it told you a wrong
-   guess was "one away" from correct when it wasn't actually close, and it let you pile a
-   fifth tile onto a guess that should have been locked at four. The third was a mismatch
-   between what you picked and what you got: choosing a color in the puzzle builder didn't
-   apply that color, it applied a different one. The shared fix on top of those three was
-   cosmetic but real: the hardest (purple) category's "solved" banner had no text color set,
-   so its title and words were much harder to read than the other three colors.
+1. Two of the four bugs made the app too trigger-happy: it called a wrong guess "one away"
+   when it wasn't close, and it let you add a fifth tile to a guess that should have been
+   capped at four. The third was a plain mismatch — pick a color in the puzzle builder, get
+   a different one. On top of those three: the purple category's "solved" banner had no
+   text color set, so it was harder to read than the other three.
 
-2. My agent (Claude) found the exact line and root cause for all three defects and the banner
-   fix within minutes of reading the relevant files, and every fix landed as a one-line change
-   with no side effects, which build and lint confirmed each time. Where it got something
-   wrong: when adding the required filler group, its first pick ("Sandwich breads") turned out
-   to already exist in the pool almost word-for-word, and it only caught this by grepping every
-   existing title before committing — it hadn't checked that up front, even though the anchor
-   comment explicitly says not to duplicate an existing title.
+2. Claude found the exact line and cause for all three bugs and the banner fix fast, and
+   every fix was one line, confirmed by build and lint each time. What it got wrong: its
+   first pick for the required filler group ("Sandwich breads") already existed in the pool
+   almost word-for-word. It only caught that by grepping every title first — something the
+   anchor comment already told it to check.
 
-3. The W1-3 fix belongs in `CreatePanel.tsx`'s `<option>` markup, not anywhere else, because
-   that's the only place the bug actually lives: the `<select>` itself is already wired
-   correctly to `group.difficulty`, and the CSS color lookup by difficulty index is correct
-   too. The single broken line was `value={(d + 1) % 4}` on each option, which bound every
-   color choice one slot off from the label sitting right next to it. Fixing it anywhere else
-   would have meant working around a symptom instead of the one line actually causing it.
+3. The W1-3 fix belongs in `CreatePanel.tsx`'s `<option>` markup, full stop. The `<select>`
+   was already wired correctly to `group.difficulty`, and the color lookup by difficulty
+   index was correct too. The one broken line was `value={(d + 1) % 4}` on each option,
+   shifting every color choice one slot off from its own label. Fixing it anywhere else
+   would've been patching a symptom, not the cause.
 
-4. Merging `filler-updates` conflicted at the same anchor line where I'd added my own filler
-   group, since three other categories landed there too. I kept all four groups — mine and the
-   three incoming ones — rather than picking one side. Deleting the incoming groups to make the
-   conflict disappear would have quietly erased three other people's contributions to a pool
-   that's shared across the whole cohort, which is explicitly called out as an automatic zero
-   and, more importantly, just isn't how a merge is supposed to work.
+4. Merging `filler-updates` conflicted where I'd added my own filler group, since three
+   other categories landed at the same spot. I kept all four — mine and the three incoming
+   ones. Deleting the incoming groups to dodge the conflict would've erased three other
+   people's work for no reason, and it's called out as an automatic zero besides.
