@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const THEMES = [
+  { id: 'c3', label: 'C3.ai', color: '#22d3ee' },
   { id: 'tokyo', label: 'Tokyo Night', color: '#73daca' },
   { id: 'miami', label: 'Miami', color: '#ff2d95' },
   { id: 'matcha', label: 'Matcha', color: '#8db660' },
@@ -15,7 +16,7 @@ export function ThemePicker() {
   const [active, setActive] = useState<ThemeId>(() => {
     const stored = localStorage.getItem(STORAGE_KEY) as ThemeId | null
     if (stored && THEMES.some((t) => t.id === stored)) return stored
-    return 'tokyo'
+    return 'c3'
   })
 
   useEffect(() => {

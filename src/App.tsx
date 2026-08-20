@@ -78,7 +78,7 @@ function HomeScreen({ onCreate, onExample }: { onCreate: () => void; onExample: 
         <div className="h-6 w-6 rounded" style={{ background: 'var(--diff-2)' }} />
         <div className="h-6 w-6 rounded" style={{ background: 'var(--diff-3)' }} />
       </div>
-      <h1 className="text-4xl font-bold text-[var(--text)] mb-2">Connections Maker</h1>
+      <h1 className="text-4xl font-bold uppercase text-[var(--text)] mb-2">Connections Maker</h1>
       <p className="text-[var(--text-dim)] mb-10">
         Build and share your own NYT-style Connections puzzles. 16 words, 4 groups, no account needed.
       </p>

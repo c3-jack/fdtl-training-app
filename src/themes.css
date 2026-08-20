@@ -4,7 +4,6 @@
    intentionally theme-invariant -- they're part of the puzzle's visual
    language and need to render identically everywhere. */
 
-html,
 html[data-theme='tokyo'] {
   --bg: #16161e;
   --surface: #1a1b26;
@@ -22,6 +21,26 @@ html[data-theme='tokyo'] {
   --color-text-bright: #c0caf5;
   --color-accent: #73daca;
   --color-accent-dim: #7aa2f7;
+}
+
+html,
+html[data-theme='c3'] {
+  --bg: #0a0e1a;
+  --surface: #101828;
+  --text: #b9c4d6;
+  --text-dim: #5b6b85;
+  --accent: #22d3ee;
+  --accent-2: #0ea5e9;
+  --accent-3: #38bdf8;
+  --border: #1e293b;
+  --color-bg: #0a0e1a;
+  --color-bg-card: #101828;
+  --color-bg-hover: #1c2740;
+  --color-border: #1e293b;
+  --color-text: #b9c4d6;
+  --color-text-bright: #f1f5f9;
+  --color-accent: #22d3ee;
+  --color-accent-dim: #0ea5e9;
 }
 
 html[data-theme='miami'] {
