@@ -411,7 +411,7 @@ function GroupEditor({
           >
             <option value="">Color...</option>
             {DIFFICULTY_OPTIONS.map((d) => (
-              <option key={d} value={(d + 1) % 4} disabled={usedDifficulties.includes(d) && group.difficulty !== d}>
+              <option key={d} value={d} disabled={usedDifficulties.includes(d) && group.difficulty !== d}>
                 {DIFFICULTY_LABELS[d]}
               </option>
             ))}
