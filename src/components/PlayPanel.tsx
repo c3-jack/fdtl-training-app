@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Puzzle } from '../types/puzzle'
 import { usePuzzleState } from '../hooks/usePuzzleState'
 import { copyToClipboard, getShortUrl, shareUrl } from '../lib/share'
+import { isSoundMuted, playCorrect, playGameEnd, primeAudio, setSoundMuted } from '../lib/sound'
 import { Tile } from './Tile'
 import { SolvedGroupBanner } from './SolvedGroupBanner'
 import { ResultsScreen } from './ResultsScreen'
@@ -14,6 +15,34 @@ export function PlayPanel({ puzzle, onBack, onCreate }: { puzzle: Puzzle; onBack
   const [shortening, setShortening] = useState(true)
   // null = idle, 'short'/'full' after copy.
   const [copyState, setCopyState] = useState<null | 'short' | 'full'>(null)
+  const [muted, setMuted] = useState(isSoundMuted)
+
+  function toggleMuted() {
+    setMuted((m) => {
+      const next = !m
+      setSoundMuted(next)
+      return next
+    })
+  }
+
+  // Play a chime whenever a new group is solved.
+  const solvedCountRef = useRef(state.solved.length)
+  useEffect(() => {
+    if (state.solved.length > solvedCountRef.current) playCorrect()
+    solvedCountRef.current = state.solved.length
+  }, [state.solved.length])
+
+  // Play a win/lose sound exactly once when the game ends.
+  const endSoundPlayedRef = useRef(false)
+  useEffect(() => {
+    if (state.status === 'playing') {
+      endSoundPlayedRef.current = false
+      return
+    }
+    if (endSoundPlayedRef.current) return
+    endSoundPlayedRef.current = true
+    playGameEnd(state.status === 'won')
+  }, [state.status])
 
   useEffect(() => {
     let cancelled = false
@@ -67,7 +96,11 @@ export function PlayPanel({ puzzle, onBack, onCreate }: { puzzle: Puzzle; onBack
   }
 
   return (
-    <div className="max-w-xl mx-auto p-4 pt-16">
+    // Priming here (capture phase) guarantees an AudioContext exists and is
+    // running before any later effect calls playCorrect/playGameEnd -- those
+    // fire from a useEffect, which runs outside the gesture the browser
+    // requires for a *fresh* audio context to unsuspend.
+    <div className="max-w-xl mx-auto p-4 pt-16" onPointerDownCapture={primeAudio}>
       <div className="flex items-center justify-between mb-2 gap-2">
         <button
           type="button"
@@ -94,6 +127,15 @@ export function PlayPanel({ puzzle, onBack, onCreate }: { puzzle: Puzzle; onBack
               : copyState === 'full'
                 ? 'Copied (full link)'
                 : 'Copy link'}
+        </button>
+        <button
+          type="button"
+          onClick={toggleMuted}
+          className="text-[var(--text-dim)] hover:text-[var(--text)] text-sm"
+          title={muted ? 'Unmute sound' : 'Mute sound'}
+          aria-label={muted ? 'Unmute sound' : 'Mute sound'}
+        >
+          {muted ? '🔇' : '🔊'}
         </button>
         <div className="text-[var(--text-dim)] text-xs">
           {state.mistakesLeft} mistake{state.mistakesLeft === 1 ? '' : 's'} left
