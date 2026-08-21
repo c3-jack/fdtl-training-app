@@ -129,6 +129,7 @@ const YELLOW: FillerGroup[] = [
 
   // Add your own filler group directly below this line. Keep it one line, exactly
   // 4 words, difficulty: 0, and a title nobody else in the pool has already used.
+  { title: '90s Cars', words: ['McLaren F1', 'Honda NSX', 'Mazda RX-7', 'Toyota Supra'], difficulty: 0 },
 ]
 
 // ─── GREEN (1): list-categories that need a beat of thought ─────────────
