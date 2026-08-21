@@ -1,5 +1,4 @@
 import type { Difficulty, Group, Puzzle } from '../types/puzzle'
-
 /**
  * Validate an unknown value as a playable Puzzle. Returns `{ ok: true, puzzle }`
  * or `{ ok: false, error }`. Used at both ends of the share pipeline:
@@ -19,7 +18,6 @@ export function validatePuzzle(input: unknown): ValidationResult {
   if (!Array.isArray(p.groups) || p.groups.length !== 4) {
     return { ok: false, error: 'Must have exactly 4 groups' }
   }
-
   const seenDifficulties = new Set<Difficulty>()
   const seenWords = new Set<string>()
   const groups: Group[] = []
@@ -118,7 +116,7 @@ export function checkGuess(guess: readonly TaggedWord[]): GuessResult {
     if (c === 4) return { status: 'correct', groupIndex: gi }
   }
   for (const c of counts.values()) {
-    if (c === 2) return { status: 'one-away' }
+  if (c === 3) return { status: 'one-away' }
   }
   return { status: 'wrong' }
 }
