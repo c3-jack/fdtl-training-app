@@ -24,6 +24,28 @@ html[data-theme='tokyo'] {
   --color-accent-dim: #7aa2f7;
 }
 
+/* Light variants -- same accent colors as their dark counterpart above,
+   only the background/surface/text/border axis flips so the theme's
+   identity (its accent palette) stays recognizable in light mode too. */
+html[data-theme='tokyo'][data-mode='light'] {
+  --bg: #e6e7ed;
+  --surface: #d5d6db;
+  --text: #343b58;
+  --text-dim: #6c6f93;
+  --accent: #73daca;
+  --accent-2: #7aa2f7;
+  --accent-3: #bb9af7;
+  --border: #c4c8da;
+  --color-bg: #e6e7ed;
+  --color-bg-card: #d5d6db;
+  --color-bg-hover: #c4c8da;
+  --color-border: #c4c8da;
+  --color-text: #343b58;
+  --color-text-bright: #202340;
+  --color-accent: #73daca;
+  --color-accent-dim: #7aa2f7;
+}
+
 html[data-theme='miami'] {
   --bg: #0d0221;
   --surface: #150535;
@@ -39,6 +61,25 @@ html[data-theme='miami'] {
   --color-border: #2a1a4e;
   --color-text: #e0def4;
   --color-text-bright: #e0def4;
+  --color-accent: #ff2d95;
+  --color-accent-dim: #00f0ff;
+}
+
+html[data-theme='miami'][data-mode='light'] {
+  --bg: #f4eefc;
+  --surface: #e8ddf7;
+  --text: #2a1a4e;
+  --text-dim: #6b5b95;
+  --accent: #ff2d95;
+  --accent-2: #00f0ff;
+  --accent-3: #ffe156;
+  --border: #d4c2ef;
+  --color-bg: #f4eefc;
+  --color-bg-card: #e8ddf7;
+  --color-bg-hover: #d4c2ef;
+  --color-border: #d4c2ef;
+  --color-text: #2a1a4e;
+  --color-text-bright: #150535;
   --color-accent: #ff2d95;
   --color-accent-dim: #00f0ff;
 }
@@ -62,6 +103,25 @@ html[data-theme='matcha'] {
   --color-accent-dim: #d4be98;
 }
 
+html[data-theme='matcha'][data-mode='light'] {
+  --bg: #f2ede3;
+  --surface: #e8e0d1;
+  --text: #3c3836;
+  --text-dim: #7c6f64;
+  --accent: #8db660;
+  --accent-2: #d4be98;
+  --accent-3: #a9b665;
+  --border: #d3c7ae;
+  --color-bg: #f2ede3;
+  --color-bg-card: #e8e0d1;
+  --color-bg-hover: #d3c7ae;
+  --color-border: #d3c7ae;
+  --color-text: #3c3836;
+  --color-text-bright: #2b2723;
+  --color-accent: #8db660;
+  --color-accent-dim: #d4be98;
+}
+
 html[data-theme='gruvbox'] {
   --bg: #282828;
   --surface: #3c3836;
@@ -77,6 +137,25 @@ html[data-theme='gruvbox'] {
   --color-border: #504945;
   --color-text: #ebdbb2;
   --color-text-bright: #ebdbb2;
+  --color-accent: #fb4934;
+  --color-accent-dim: #fabd2f;
+}
+
+html[data-theme='gruvbox'][data-mode='light'] {
+  --bg: #fbf1c7;
+  --surface: #ebdbb2;
+  --text: #3c3836;
+  --text-dim: #7c6f64;
+  --accent: #fb4934;
+  --accent-2: #fabd2f;
+  --accent-3: #b8bb26;
+  --border: #d5c4a1;
+  --color-bg: #fbf1c7;
+  --color-bg-card: #ebdbb2;
+  --color-bg-hover: #d5c4a1;
+  --color-border: #d5c4a1;
+  --color-text: #3c3836;
+  --color-text-bright: #282828;
   --color-accent: #fb4934;
   --color-accent-dim: #fabd2f;
 }
