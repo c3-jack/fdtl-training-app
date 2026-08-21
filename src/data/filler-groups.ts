@@ -133,6 +133,7 @@ const YELLOW: FillerGroup[] = [
   { title: 'Winter holidays', words: ['Christmas', 'Hanukkah', 'Kwanzaa', "New Year's"], difficulty: 0 },
   { title: 'Bathroom fixtures', words: ['Sink', 'Toilet', 'Shower', 'Bathtub'], difficulty: 0 },
   { title: 'Types of fences', words: ['Picket', 'Chain-link', 'Wrought Iron', 'Split Rail'], difficulty: 0 },
+]
 
 // ─── GREEN (1): list-categories that need a beat of thought ─────────────
 
