@@ -4,7 +4,6 @@
    intentionally theme-invariant -- they're part of the puzzle's visual
    language and need to render identically everywhere. */
 
-html,
 html[data-theme='tokyo'] {
   --bg: #16161e;
   --surface: #1a1b26;
@@ -22,6 +21,29 @@ html[data-theme='tokyo'] {
   --color-text-bright: #c0caf5;
   --color-accent: #73daca;
   --color-accent-dim: #7aa2f7;
+}
+
+/* C3 AI standard — Carbon/Tungsten/Graphene monochrome ramp, White for
+   primary UI actions (matches c3-btn--primary-inv), Link Blue reserved
+   as the rare non-neutral highlight. */
+html,
+html[data-theme='c3'] {
+  --bg: #000000;
+  --surface: #191919;
+  --text: #d4d4d4;
+  --text-dim: #8c8c8c;
+  --accent: #ffffff;
+  --accent-2: #8c8c8c;
+  --accent-3: #257799;
+  --border: #383838;
+  --color-bg: #000000;
+  --color-bg-card: #191919;
+  --color-bg-hover: #383838;
+  --color-border: #383838;
+  --color-text: #d4d4d4;
+  --color-text-bright: #ffffff;
+  --color-accent: #ffffff;
+  --color-accent-dim: #8c8c8c;
 }
 
 html[data-theme='miami'] {
@@ -79,4 +101,23 @@ html[data-theme='gruvbox'] {
   --color-text-bright: #ebdbb2;
   --color-accent: #fb4934;
   --color-accent-dim: #fabd2f;
+}
+
+html[data-theme='c3-blue'] {
+  --bg: #0a1628;
+  --surface: #101f38;
+  --text: #c3ccdb;
+  --text-dim: #6b7a90;
+  --accent: #00b4d8;
+  --accent-2: #635bff;
+  --accent-3: #4dd0e1;
+  --border: #1c3050;
+  --color-bg: #0a1628;
+  --color-bg-card: #101f38;
+  --color-bg-hover: #1c3050;
+  --color-border: #1c3050;
+  --color-text: #c3ccdb;
+  --color-text-bright: #ffffff;
+  --color-accent: #00b4d8;
+  --color-accent-dim: #635bff;
 }
