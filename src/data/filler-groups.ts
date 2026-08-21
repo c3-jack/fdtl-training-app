@@ -127,9 +127,12 @@ const YELLOW: FillerGroup[] = [
   { title: 'Types of bears', words: ['Brown', 'Black', 'Polar', 'Panda'], difficulty: 0 },
   { title: 'Citrus cousins', words: ['Yuzu', 'Pomelo', 'Kumquat', 'Bergamot'], difficulty: 0 },
 
-  // Add your own filler group directly below this line. Keep it one line, exactly
+    // Add your own filler group directly below this line. Keep it one line, exactly
   // 4 words, difficulty: 0, and a title nobody else in the pool has already used.
-  { title: 'Types of clouds', words: ['Cumulus', 'Stratus', 'Cirrus', 'Nimbus'], difficulty: 0 },
+  { title: 'Your Group Title', words: ['A', 'B', 'C', 'D'], difficulty: 0 },
+  { title: 'Winter holidays', words: ['Christmas', 'Hanukkah', 'Kwanzaa', "New Year's"], difficulty: 0 },
+  { title: 'Bathroom fixtures', words: ['Sink', 'Toilet', 'Shower', 'Bathtub'], difficulty: 0 },
+  { title: 'Types of fences', words: ['Picket', 'Chain-link', 'Wrought Iron', 'Split Rail'], difficulty: 0 },
 ]
 
 // ─── GREEN (1): list-categories that need a beat of thought ─────────────
