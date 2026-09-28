@@ -88,3 +88,68 @@ body {
 .toast-flash {
   animation: toast-flash 1.6s ease forwards;
 }
+
+/* Halloween theme — spooky decorations */
+@keyframes float-bat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  33%       { transform: translateY(-18px) rotate(5deg); }
+  66%       { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes spooky-flicker {
+  0%, 88%, 100% { opacity: 1; }
+  90%  { opacity: 0.75; }
+  92%  { opacity: 1; }
+  95%  { opacity: 0.55; }
+  97%  { opacity: 1; }
+}
+
+@keyframes fog-drift {
+  0%   { transform: translateX(-12px); opacity: 0.3; }
+  50%  { transform: translateX(12px);  opacity: 0.5; }
+  100% { transform: translateX(-12px); opacity: 0.3; }
+}
+
+html[data-theme='halloween'] body::before {
+  content: "🦇";
+  position: fixed;
+  top: 12%;
+  left: 6%;
+  font-size: 1.6rem;
+  animation: float-bat 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 6px #ff6a00);
+}
+
+html[data-theme='halloween'] body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+  background: linear-gradient(to top, rgba(110, 0, 180, 0.4), transparent);
+  pointer-events: none;
+  z-index: 1;
+  animation: fog-drift 9s ease-in-out infinite;
+}
+
+html[data-theme='halloween'] #root::before {
+  content: "🦇";
+  position: fixed;
+  top: 22%;
+  right: 7%;
+  font-size: 1.1rem;
+  animation: float-bat 4s ease-in-out infinite reverse;
+  animation-delay: -1.5s;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 5px #a855f7);
+  opacity: 0.75;
+}
+
+html[data-theme='halloween'] h1 {
+  animation: spooky-flicker 9s ease-in-out infinite;
+  text-shadow: 0 0 18px rgba(255, 106, 0, 0.55), 0 0 40px rgba(255, 106, 0, 0.2);
+}

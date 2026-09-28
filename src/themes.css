@@ -80,3 +80,22 @@ html[data-theme='gruvbox'] {
   --color-accent: #fb4934;
   --color-accent-dim: #fabd2f;
 }
+
+html[data-theme='halloween'] {
+  --bg: #07000f;
+  --surface: #110018;
+  --text: #f0d9a0;
+  --text-dim: #6b4e30;
+  --accent: #ff6a00;
+  --accent-2: #a855f7;
+  --accent-3: #39ff14;
+  --border: #2a0045;
+  --color-bg: #07000f;
+  --color-bg-card: #110018;
+  --color-bg-hover: #2a0045;
+  --color-border: #2a0045;
+  --color-text: #f0d9a0;
+  --color-text-bright: #ffedc2;
+  --color-accent: #ff6a00;
+  --color-accent-dim: #a855f7;
+}
