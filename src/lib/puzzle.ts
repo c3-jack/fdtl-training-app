@@ -118,7 +118,7 @@ export function checkGuess(guess: readonly TaggedWord[]): GuessResult {
     if (c === 4) return { status: 'correct', groupIndex: gi }
   }
   for (const c of counts.values()) {
-    if (c === 2) return { status: 'one-away' }
+    if (c === 3) return { status: 'one-away' }
   }
   return { status: 'wrong' }
 }
