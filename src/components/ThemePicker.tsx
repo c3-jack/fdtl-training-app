@@ -5,7 +5,7 @@ const THEMES = [
   { id: 'miami', label: 'Miami', color: '#ff2d95' },
   { id: 'matcha', label: 'Matcha', color: '#8db660' },
   { id: 'gruvbox', label: 'Gruvbox', color: '#fb4934' },
-  { id: 'dracula', label: 'Dracula', color: '#ff79c6' },
+  { id: 'dracula', label: 'Dracula', color: '#a8001c' },
 ] as const
 
 type ThemeId = (typeof THEMES)[number]['id']
