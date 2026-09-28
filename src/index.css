@@ -44,6 +44,7 @@ body {
   --diff-1-text: #222;
   --diff-2-text: #222;
   --diff-3-text: #222;
+  --layout-accent: #b8e6a1; /* light green accent stripe on the app layout */
 }
 
 /* Tile animations. Keep these in CSS (not JS) so they feel snappy
