@@ -80,3 +80,23 @@ html[data-theme='gruvbox'] {
   --color-accent: #fb4934;
   --color-accent-dim: #fabd2f;
 }
+
+/* Captain America -- the shield: Old Glory navy, red, and star white. */
+html[data-theme='captain'] {
+  --bg: #0a1a3f;
+  --surface: #10264f;
+  --text: #eaf0ff;
+  --text-dim: #8ea3cf;
+  --accent: #e2333f;
+  --accent-2: #3d6fe0;
+  --accent-3: #f2f4f8;
+  --border: #1c3563;
+  --color-bg: #0a1a3f;
+  --color-bg-card: #10264f;
+  --color-bg-hover: #1c3563;
+  --color-border: #1c3563;
+  --color-text: #eaf0ff;
+  --color-text-bright: #ffffff;
+  --color-accent: #e2333f;
+  --color-accent-dim: #3d6fe0;
+}
