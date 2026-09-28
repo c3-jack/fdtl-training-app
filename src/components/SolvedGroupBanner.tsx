@@ -8,6 +8,7 @@ const textColors: Partial<Record<Difficulty, string>> = {
   0: 'var(--diff-0-text)',
   1: 'var(--diff-1-text)',
   2: 'var(--diff-2-text)',
+  3: 'var(--diff-3-text)',
 }
 
 export function SolvedGroupBanner({ group }: { group: Group }) {
