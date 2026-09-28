@@ -80,3 +80,22 @@ html[data-theme='gruvbox'] {
   --color-accent: #fb4934;
   --color-accent-dim: #fabd2f;
 }
+
+html[data-theme='dracula'] {
+  --bg: #0b0708;
+  --surface: #170f10;
+  --text: #e8dcc8;
+  --text-dim: #6b4c4c;
+  --accent: #a8001c;
+  --accent-2: #4d7a3f;
+  --accent-3: #6a3fa0;
+  --border: #2a1015;
+  --color-bg: #0b0708;
+  --color-bg-card: #170f10;
+  --color-bg-hover: #2a1015;
+  --color-border: #2a1015;
+  --color-text: #e8dcc8;
+  --color-text-bright: #f2e8d5;
+  --color-accent: #a8001c;
+  --color-accent-dim: #4d7a3f;
+}
