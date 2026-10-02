@@ -41,7 +41,7 @@ export function usePuzzleState(puzzle: Puzzle) {
       setSelected((s) => {
         const idx = s.findIndex((x) => x.word === word.word)
         if (idx >= 0) return s.filter((_, i) => i !== idx)
-        if (s.length > 4) return s
+        if (s.length >= 4) return s
         return [...s, word]
       })
     },
