@@ -1,6 +1,6 @@
 # Assignment 1 report
 
-## 1. The three defects, in one sentence each
+## 1. The three defects and the banner-colour fix, in one sentence each
 
 - **W1-1 — "One away!" on weak guesses.** The game cheered "One away!" whenever two of your four
   tiles happened to belong to the same group, so a scattered guess got the same encouragement as a
@@ -11,6 +11,9 @@
 - **W1-3 — the Color dropdown lied about the color.** In Create mode each group's color menu was
   off by one, so an untouched first group showed "Purple" over a yellow strip, and choosing
   "Yellow" actually turned the group green.
+- **W1-0 — the purple banner had no text colour.** When you solved the hardest (purple) group, its
+  banner never picked a text colour the way the other three do, so the words showed in whatever
+  colour the page happened to use; now it uses the same dark text as the others.
 
 ## 2. Where the agent helped, and where it got in the way
 
@@ -18,9 +21,9 @@ The agent was fastest at the part I expected to be slowest: given only the sympt
 ticket, it traced W1-1 to `checkGuess` in `src/lib/puzzle.ts` and W1-2 to the `toggle` guard in
 `usePuzzleState.ts` and pointed at the exact wrong number in each, which saved me reading the whole
 state hook. Where it got in the way was overconfidence on the small stuff: the first filler-group
-title it proposed for W1-0, "Chess pieces," was already in the pool — it hadn't checked — and it
-only caught the collision after I had it grep the file, at which point it also flagged that "Knight"
-and "Rook" already appeared elsewhere. I replaced it with "Chili peppers" and re-checked every word.
+title it proposed for W1-0, "Chess pieces," was already in the pool. It suggested it before checking,
+and only a grep of the file afterwards showed the collision, along with "Knight" and "Rook" already
+appearing elsewhere. It switched to "Chili peppers" and checked the title and every word first.
 The lesson I took is that the agent is reliable about the line of code and careless about the
 surrounding facts, so the checking is still mine to do.
 
