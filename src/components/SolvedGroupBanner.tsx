@@ -4,10 +4,11 @@ import type { Difficulty, Group } from '../types/puzzle'
  * Colored banner that replaces a solved group's row of tiles. Shows
  * the theme title and the 4 words, using the group's difficulty color.
  */
-const textColors: Partial<Record<Difficulty, string>> = {
+const textColors: Record<Difficulty, string> = {
   0: 'var(--diff-0-text)',
   1: 'var(--diff-1-text)',
   2: 'var(--diff-2-text)',
+  3: 'var(--diff-3-text)',
 }
 
 export function SolvedGroupBanner({ group }: { group: Group }) {
@@ -16,7 +17,7 @@ export function SolvedGroupBanner({ group }: { group: Group }) {
       className="rounded-lg p-3 text-center group-reveal"
       style={{
         background: `var(--diff-${group.difficulty})`,
-        color: textColors[group.difficulty] ?? '',
+        color: textColors[group.difficulty],
       }}
     >
       <div className="font-bold uppercase tracking-wide text-sm">{group.title}</div>
