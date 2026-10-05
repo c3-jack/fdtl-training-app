@@ -126,8 +126,10 @@ const YELLOW: FillerGroup[] = [
   { title: 'Snake types', words: ['Python', 'Cobra', 'Boa', 'Mamba'], difficulty: 0 },
   { title: 'Types of bears', words: ['Brown', 'Black', 'Polar', 'Panda'], difficulty: 0 },
   { title: 'Citrus cousins', words: ['Yuzu', 'Pomelo', 'Kumquat', 'Bergamot'], difficulty: 0 },
-  { title: 'exception', words: ['caillou', 'genou', 'hibou', 'chou'], difficulty: 0 },
-  
+  { title: 'French -ou nouns that take -x', words: ['Caillou', 'Genou', 'Hibou', 'Chou'], difficulty: 0 },
+
+  // Add your own filler group directly below this line. Keep it one line, exactly
+  // 4 words, difficulty: 0, and a title nobody else in the pool has already used.
 ]
 
 // ─── GREEN (1): list-categories that need a beat of thought ─────────────
