@@ -99,3 +99,152 @@ html[data-theme='nord'] {
   --color-accent: #88c0d0;
   --color-accent-dim: #81a1c1;
 }
+
+/* Star Wars Rebels -- deep-space night with Kanan's blue and Ezra's green
+   lightsaber blades. The glow rules below are scoped to this theme only. */
+html[data-theme='rebels'] {
+  --bg: #04060f;
+  --surface: #0a1226;
+  --text: #dff4ff;
+  --text-dim: #6f8fb3;
+  --accent: #2ea8ff;
+  --accent-2: #39ff6a;
+  --accent-3: #9be7ff;
+  --border: #16305a;
+  --color-bg: #04060f;
+  --color-bg-card: #0a1226;
+  --color-bg-hover: #13234a;
+  --color-border: #16305a;
+  --color-text: #dff4ff;
+  --color-text-bright: #ffffff;
+  --color-accent: #2ea8ff;
+  --color-accent-dim: #39ff6a;
+}
+
+html[data-theme='rebels'] body {
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(46, 168, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(57, 255, 106, 0.14), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+/* Crossed blades: a blue saber across the top, a green one across the bottom. */
+html[data-theme='rebels'] #root::before,
+html[data-theme='rebels'] #root::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 50;
+  pointer-events: none;
+}
+html[data-theme='rebels'] #root::before {
+  top: 0;
+  background: linear-gradient(90deg, transparent, #e6f6ff 15%, #2ea8ff 50%, #e6f6ff 85%, transparent);
+  box-shadow: 0 0 8px #2ea8ff, 0 0 20px #2ea8ff, 0 0 40px rgba(46, 168, 255, 0.6);
+}
+html[data-theme='rebels'] #root::after {
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, #eaffef 15%, #39ff6a 50%, #eaffef 85%, transparent);
+  box-shadow: 0 0 8px #39ff6a, 0 0 20px #39ff6a, 0 0 40px rgba(57, 255, 106, 0.6);
+}
+
+html[data-theme='rebels'] h1 {
+  background: linear-gradient(90deg, #2ea8ff, #9be7ff 50%, #39ff6a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(46, 168, 255, 0.55));
+}
+
+html[data-theme='rebels'] .bg-\[var\(--accent\)\] {
+  box-shadow: 0 0 10px rgba(46, 168, 255, 0.7), 0 0 28px rgba(57, 255, 106, 0.35);
+}
+html[data-theme='rebels'] .bg-\[var\(--accent\)\]:hover {
+  box-shadow: 0 0 14px rgba(57, 255, 106, 0.85), 0 0 36px rgba(46, 168, 255, 0.5);
+}
+
+/* Lightsabers (src/components/Lightsabers.tsx) -- hidden everywhere except
+   the Rebels theme, and on screens too narrow to fit them beside the content.
+   Switching to the theme flips display, which replays the ignition animation. */
+.lightsabers {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  html[data-theme='rebels'] .lightsabers {
+    display: block;
+  }
+}
+
+html[data-theme='rebels'] .saber {
+  position: fixed;
+  bottom: 5vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+html[data-theme='rebels'] .saber-left {
+  left: 6vw;
+  transform: rotate(-8deg);
+  transform-origin: bottom center;
+}
+html[data-theme='rebels'] .saber-right {
+  right: 6vw;
+  transform: rotate(8deg);
+  transform-origin: bottom center;
+}
+
+html[data-theme='rebels'] .saber-blade {
+  width: 12px;
+  height: min(62vh, 560px);
+  margin-bottom: -2px;
+  border-radius: 6px 6px 2px 2px;
+  background: #f4fbff;
+  transform-origin: bottom center;
+  animation:
+    saber-ignite 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both,
+    saber-hum 2.4s ease-in-out 0.45s infinite;
+}
+html[data-theme='rebels'] .saber-blue .saber-blade {
+  --saber: #2ea8ff;
+}
+html[data-theme='rebels'] .saber-green .saber-blade {
+  --saber: #39ff6a;
+}
+html[data-theme='rebels'] .saber-blade {
+  box-shadow:
+    0 0 4px 2px var(--saber),
+    0 0 14px 6px var(--saber),
+    0 0 36px 12px color-mix(in srgb, var(--saber) 55%, transparent),
+    0 0 80px 24px color-mix(in srgb, var(--saber) 25%, transparent);
+}
+
+html[data-theme='rebels'] .saber-blue .saber-button {
+  fill: #2ea8ff;
+}
+html[data-theme='rebels'] .saber-green .saber-button {
+  fill: #39ff6a;
+}
+html[data-theme='rebels'] .saber-hilt {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes saber-ignite {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes saber-hum {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme='rebels'] .saber-blade {
+    animation: none;
+  }
+}

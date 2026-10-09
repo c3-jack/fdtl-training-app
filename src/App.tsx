@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ThemePicker } from './components/ThemePicker'
+import { Lightsabers } from './components/Lightsabers'
 import { CreatePanel } from './components/CreatePanel'
 import { PlayPanel } from './components/PlayPanel'
 import { modePath, readMode } from './lib/share'
@@ -57,6 +58,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <Lightsabers />
       <div className="absolute top-4 right-4 z-10">
         <ThemePicker />
       </div>
